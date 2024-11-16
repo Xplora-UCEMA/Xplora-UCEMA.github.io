@@ -42,6 +42,27 @@ export function CLevelTalks() {
     "Una oportunidad increíble para hacer networking y crecer profesionalmente."
   ]
 
+  const speakers = [
+    {
+      name: "Alex Waltuch",
+      role: "Líder Comercial en Google Argentina",
+      image: "/images/Foto-Alex.png",
+      description: "Líder en innovación tecnológica con más de 10 años de experiencia en el desarrollo de soluciones empresariales."
+    },
+    {
+      name: "Valeria Abadi",
+      role: "SVP Brand Global en Globant",
+      image: "/images/Foto-Valeria.png",
+      description: "Experta en transformación digital y desarrollo de estrategias tecnológicas para empresas en crecimiento."
+    },
+    {
+      name: "Tomás Mindlin",
+      role: "CEO y Co-Fundador de Tapi",
+      image: "/images/Foto-Tomas.png",
+      description: "Especialista en operaciones y optimización de procesos con amplia experiencia en startups."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-r from-[#000000] via-[#230052] to-[#A31F6B]" style={{ backgroundImage: 'linear-gradient(12deg, #000000, #230052, #A31F6B)' }}>
       {/* Hero Section */}
@@ -49,14 +70,14 @@ export function CLevelTalks() {
         <div className="container mx-auto">
           <div className="flex justify-between items-start mb-12">
             <Image
-              src="/"
+              src="/images/Xplora.png"   
               alt="Xplora Logo"
               width={150}
               height={50}
               className="h-12 w-auto"
             />
             <Image
-              src="/"
+              src="/images/UCEMA-LOGO.svg"
               alt="UCEMA Logo"
               width={180}
               height={60}
@@ -67,7 +88,7 @@ export function CLevelTalks() {
           <div className="text-center">
             <div className="mb-6">
               <Image
-                src="/"
+                src="/images/Clevel.svg"
                 alt="C-Level Talks"
                 width={484}
                 height={212}
@@ -96,7 +117,7 @@ export function CLevelTalks() {
 
             <a
               href="https://lu.ma/event/evt-VSCJbfpUm2dlqCo"
-              className="luma-checkout--button inline-block bg-[#cdff43] text-[#000000] hover:bg-[#b8e63b] font-bold px-8 py-3 rounded-md"
+              className="luma-checkout--button inline-block bg-[#cdff43] text-[#000000] hover:bg-[#b8e63b] font-bold px-12 py-4 rounded-lg text-xl transform hover:scale-105 transition-transform duration-200 shadow-lg"
               data-luma-action="checkout"
               data-luma-event-id="evt-VSCJbfpUm2dlqCo"
             >
@@ -147,51 +168,23 @@ export function CLevelTalks() {
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Speakers</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Alex Waltuch",
-                role: "Líder Comercial en Google Argentina",
-                company: "Google",
-                image: "/placeholder.svg",
-                description: "Con más de 10 años de experiencia en el sector tecnológico, Alex lidera estrategias comerciales innovadoras en Google Argentina."
-              },
-              {
-                name: "Valeria Abadi",
-                role: "SVP Brand Global en Globant",
-                company: "Globant",
-                image: "/placeholder.svg",
-                description: "Valeria es una experta en branding global, impulsando la visión de Globant en mercados internacionales con estrategias creativas y efectivas."
-              },
-              {
-                name: "Tomás Mindlin",
-                role: "CEO y Co-Fundador de Tapi",
-                company: "Tapi",
-                image: "/placeholder.svg",
-                description: "Emprendedor serial, Tomás ha revolucionado la industria fintech con Tapi, ofreciendo soluciones innovadoras para pagos digitales."
-              }
-            ].map((speaker) => (
-              <Card key={speaker.name} className="bg-[#230052]/50 border-[#cdff43] border p-4 flex flex-col items-center text-center">
-                <CardContent className="p-0">
-                  <div className="w-32 h-32 relative mb-4 mx-auto">
+            {speakers.map((speaker) => (
+              <Card key={speaker.name} className="bg-[#230052] text-white overflow-hidden">
+                <CardContent className="p-6 flex flex-col items-center">
+                  <div className="w-[100px] h-[100px] relative mb-4">
                     <Image
                       src={speaker.image}
-                      alt={speaker.name}
-                      fill
-                      className="object-cover rounded-lg"
+                      alt={`Foto de ${speaker.name}`}
+                      width={100}
+                      height={100}
+                      className="rounded-full object-cover"
                     />
                   </div>
                   <h3 className="text-xl font-bold mb-2">{speaker.name}</h3>
-                  <p className="text-gray-200 mb-2">{speaker.role}</p>
-                  <div className="h-8 relative mt-2 mb-4">
-                    <Image
-                      src={`/placeholder.svg`}
-                      alt={`${speaker.company} logo`}
-                      width={100}
-                      height={32}
-                      className="mx-auto h-8 w-auto object-contain"
-                    />
-                  </div>
-                  <p className="text-sm text-gray-300">{speaker.description}</p>
+                  <p className="text-gray-300 text-sm mb-3">{speaker.role}</p>
+                  <p className="text-gray-400 text-center text-sm leading-relaxed">
+                    {speaker.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -206,7 +199,7 @@ export function CLevelTalks() {
           <p className="text-xl mb-8">Inscríbete ahora y no pierdas esta oportunidad única</p>
           <a
             href="https://lu.ma/event/evt-VSCJbfpUm2dlqCo"
-            className="luma-checkout--button inline-block bg-[#cdff43] text-[#000000] hover:bg-[#b8e63b] font-bold px-8 py-4 rounded-md text-lg"
+            className="luma-checkout--button inline-block bg-[#cdff43] text-[#000000] hover:bg-[#b8e63b] font-bold px-12 py-4 rounded-lg text-xl transform hover:scale-105 transition-transform duration-200 shadow-lg"
             data-luma-action="checkout"
             data-luma-event-id="evt-VSCJbfpUm2dlqCo"
           >
